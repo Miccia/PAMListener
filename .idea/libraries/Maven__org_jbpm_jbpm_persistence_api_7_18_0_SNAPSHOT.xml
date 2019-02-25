@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.jbpm:jbpm-persistence-api:7.18.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jbpm/jbpm-persistence-api/7.18.0-SNAPSHOT/jbpm-persistence-api-7.18.0-20190218.165406-48.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jbpm/jbpm-persistence-api/7.18.0-SNAPSHOT/jbpm-persistence-api-7.18.0-20190218.165406-48-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jbpm/jbpm-persistence-api/7.18.0-SNAPSHOT/jbpm-persistence-api-7.18.0-20190218.165406-48-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

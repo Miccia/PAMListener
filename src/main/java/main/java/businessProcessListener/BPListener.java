@@ -3,7 +3,7 @@ package main.java.businessProcessListener;
 import org.kie.api.event.process.*;
 import org.kie.api.runtime.process.*;
 
-import main.java.loglib.AMQProducer;
+//import main.java.loglib.AMQProducer;
 
 public class BPListener implements org.kie.api.event.process.ProcessEventListener{
 	
@@ -33,8 +33,8 @@ public void beforeProcessCompleted(ProcessCompletedEvent event){
 
 	System.out.println("\n\n\n"+msg+"\n\n\n");
 
-	try{new AMQProducer(brokerUrl,queueName,msg).start();}
-	catch(Exception e){e.printStackTrace();}
+	//try{new AMQProducer(brokerUrl,queueName,msg).start();}
+	//catch(Exception e){e.printStackTrace();}
 
 }
 public void beforeProcessStarted(ProcessStartedEvent event){
@@ -45,12 +45,12 @@ public void beforeProcessStarted(ProcessStartedEvent event){
 
 
 	System.out.println("\n\n\n"+msg+"\n\n\n");
-
-	try{new AMQProducer(brokerUrl,queueName,msg).start();}
-	catch(Exception e){
-		System.out.println("\n\n\n \t\tOMG \n");
-		e.printStackTrace();
-		System.out.println("\n\n\n");}
+    sendToAMQ(msg);
+///	try{new AMQProducer(brokerUrl,queueName,msg).start();}
+	//catch(Exception e){
+	//	System.out.println("\n\n\n \t\tOMG \n");
+	//	e.printStackTrace();
+	//	System.out.println("\n\n\n");}
 
 } 
 
@@ -63,8 +63,8 @@ public void afterProcessCompleted(ProcessCompletedEvent event){
 
 	System.out.println("\n\n\n"+msg+"\n\n\n");
 
-	try{new AMQProducer(brokerUrl,queueName,msg).start();}
-	catch(Exception e){e.printStackTrace();}
+	//try{new AMQProducer(brokerUrl,queueName,msg).start();}
+	//catch(Exception e){e.printStackTrace();}
 
 }
 public void afterProcessStarted(ProcessStartedEvent event){
@@ -76,8 +76,8 @@ public void afterProcessStarted(ProcessStartedEvent event){
 
 	System.out.println("\n\n\n"+msg+"\n\n\n");
 
-	try{new AMQProducer(brokerUrl,queueName,msg).start();}
-	catch(Exception e){e.printStackTrace();}
+	//try{new AMQProducer(brokerUrl,queueName,msg).start();}
+	//catch(Exception e){e.printStackTrace();}
 
 }
 
@@ -95,8 +95,8 @@ public void beforeNodeLeft(ProcessNodeLeftEvent event){
 
 	System.out.println("\n\n\n"+msg+"\n\n\n");
 
-	try{new AMQProducer(brokerUrl,queueName,msg).start();}
-	catch(Exception e){e.printStackTrace();}
+	//try{new AMQProducer(brokerUrl,queueName,msg).start();}
+	//catch(Exception e){e.printStackTrace();}
 
 
 }
@@ -109,8 +109,8 @@ public void beforeNodeTriggered(ProcessNodeTriggeredEvent event){
 
 	System.out.println("\n\n\n"+msg+"\n\n\n");
 
-	try{new AMQProducer(brokerUrl,queueName,msg).start();}
-	catch(Exception e){e.printStackTrace();}
+	//try{new AMQProducer(brokerUrl,queueName,msg).start();}
+	//catch(Exception e){e.printStackTrace();}
 
 }
 
@@ -122,8 +122,8 @@ public void afterNodeTriggered(ProcessNodeTriggeredEvent event){
 
 	System.out.println("\n\n\n"+msg+"\n\n\n");
 
-	try{new AMQProducer(brokerUrl,queueName,msg).start();}
-	catch(Exception e){e.printStackTrace();}
+	//try{new AMQProducer(brokerUrl,queueName,msg).start();}
+	//catch(Exception e){e.printStackTrace();}
 
 }
 
@@ -135,8 +135,8 @@ public void afterNodeLeft(ProcessNodeLeftEvent event){
 
 	System.out.println("\n\n\n"+msg+"\n\n\n");
 
-	try{new AMQProducer(brokerUrl,queueName,msg).start();}
-	catch(Exception e){e.printStackTrace();}
+	//try{new AMQProducer(brokerUrl,queueName,msg).start();}
+	//catch(Exception e){e.printStackTrace();}
 
 }
 
@@ -147,6 +147,32 @@ public void afterNodeLeft(ProcessNodeLeftEvent event){
 *
 */
 
-public void beforeVariableChanged(ProcessVariableChangedEvent event){}
-public void afterVariableChanged(ProcessVariableChangedEvent event){}
+public void beforeVariableChanged(ProcessVariableChangedEvent event){
+
+	String msg = "[BEFORE_VARIABLE_CHANGED]";
+	
+	System.out.println("\n\n\n"+msg+"\n\n\n");
+}
+public void afterVariableChanged(ProcessVariableChangedEvent event){
+
+		String msg ="[AFTER_VARIABLE_CHANGED]";
+
+
+	System.out.println("\n\n\n"+msg+"\n\n\n");
+}
+
+//Utils
+    public boolean sendToAMQ(String message){
+
+    try{
+
+            new PAMQProducer(queueName,message).start();
+    }catch(Exception e){
+        e.printStackTrace();
+
+        return false;
+    }
+    return true;
+    }
+
 }

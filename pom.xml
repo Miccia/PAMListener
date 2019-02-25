@@ -11,7 +11,64 @@
 	<properties>
 		<version.org.jboss.spec.jboss.javaee7>1.0.3.Final-redhat-6</version.org.jboss.spec.jboss.javaee7>
 		<version.eap>7.2.0.GA</version.eap>
+
+		<version.jboss.bom.eap>7.2.0.GA</version.jboss.bom.eap>
+		<!-- KIE versions -->
+		<version.org.kie>7.17.0.Final</version.org.kie>
 	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- <dependency>
+				<groupId>org.jboss.bom.eap</groupId>
+				<artifactId>jboss-javaee-6.0-with-tools</artifactId>
+				<version>${version.jboss.bom.eap}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			This BOM provides the jboss-javaee-6.0 with transactions stack (you
+				can read this as the JBoss stack of the Java EE 6 APIs, with some extra transactions
+				APIS for your project, that are not included in the Java EE 6 API.
+			<dependency>
+				<groupId>org.jboss.bom.eap</groupId>
+				<artifactId>jboss-javaee-6.0-with-transactions</artifactId>
+				<version>${version.jboss.bom.eap}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency> -->
+
+			<!-- KIE, Drools and jBPM dependencies. -->
+			<dependency>
+				<groupId>org.kie</groupId>
+				<artifactId>kie-api</artifactId>
+				<version>${version.org.kie}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jbpm</groupId>
+				<artifactId>jbpm-workitems</artifactId>
+				<version>${version.org.kie}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jbpm</groupId>
+				<artifactId>jbpm-human-task-core</artifactId>
+				<version>${version.org.kie}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.7</version>
+				<scope>provided</scope>
+			</dependency>
+			<!-- <dependency> <groupId>org.jboss.spec.javax.transaction</groupId>
+				<artifactId>jboss-transaction-api_1.1_spec</artifactId> <version>1.0.1.Final-redhat-3</version>
+				<scope>test</scope> </dependency> -->
+
+		</dependencies>
+	</dependencyManagement>
 
 	<dependencies>
 
@@ -26,13 +83,31 @@
     	<artifactId>loglibrary</artifactId>
     	<version>1.0</version>
     </dependency>
-<dependency>
+<!--dependency>
     <groupId>org.jbpm</groupId>
     <artifactId>jbpm-flow</artifactId>
     <version>7.17.0.Final</version>
-    
+
 			<scope>provided</scope>
-</dependency>
+</dependency-->
+
+
+		<dependency>
+			<groupId>org.kie</groupId>
+			<artifactId>kie-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jbpm</groupId>
+			<artifactId>jbpm-flow</artifactId>
+			<version>${version.org.kie}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jbpm</groupId>
+			<artifactId>jbpm-human-task-core</artifactId>
+			<version>7.18.0-SNAPSHOT</version>
+		</dependency>
 
 	</dependencies>
 

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.drools:drools-persistence-api:7.18.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/drools/drools-persistence-api/7.18.0-SNAPSHOT/drools-persistence-api-7.18.0-20190218.152024-53.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/drools/drools-persistence-api/7.18.0-SNAPSHOT/drools-persistence-api-7.18.0-20190218.152024-53-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/drools/drools-persistence-api/7.18.0-SNAPSHOT/drools-persistence-api-7.18.0-20190218.152024-53-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

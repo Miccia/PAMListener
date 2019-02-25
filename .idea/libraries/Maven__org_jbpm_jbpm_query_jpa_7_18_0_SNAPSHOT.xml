@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.jbpm:jbpm-query-jpa:7.18.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jbpm/jbpm-query-jpa/7.18.0-SNAPSHOT/jbpm-query-jpa-7.18.0-20190218.165508-47.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jbpm/jbpm-query-jpa/7.18.0-SNAPSHOT/jbpm-query-jpa-7.18.0-20190218.165508-47-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jbpm/jbpm-query-jpa/7.18.0-SNAPSHOT/jbpm-query-jpa-7.18.0-20190218.165508-47-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
